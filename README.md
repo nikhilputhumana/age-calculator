@@ -1,4 +1,4 @@
-# age_calculator_horoscope
+# Age Calculator Horoscope
 
 A new Flutter project.
 
