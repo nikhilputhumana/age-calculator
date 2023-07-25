@@ -25,6 +25,8 @@ class _ScreenHomeState extends State<ScreenHome> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        toolbarHeight: 80,
+        // centerTitle: true,
         title: const Text(
           'Age Calculator',
           style: TextStyle(
@@ -33,160 +35,180 @@ class _ScreenHomeState extends State<ScreenHome> {
           ),
         ),
       ),
-      body: Center(
-        child: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Enter Your Date of Birth',
-                style: Theme.of(context).textTheme.headlineSmall,
+      body: Form(
+        key: _formKey,
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 50,
+            ),
+            Text(
+              'Enter Your Date of Birth',
+
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 28,
+                color: Color.fromARGB(218, 8, 7, 5),
               ),
-              const SizedBox(height: 50),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 75,
-                    child: TextFormField(
-                      controller: _day,
-                      textAlign: TextAlign.center,
-                      inputFormatters: [LengthLimitingTextInputFormatter(2)],
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Day',
-                        hintText: 'dd',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                        ),
+
+              // style: Theme.of(context).textTheme.headlineLarge,
+            ),
+            const SizedBox(height: 50),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 75,
+                  child: TextFormField(
+                    controller: _day,
+                    textAlign: TextAlign.center,
+                    inputFormatters: [LengthLimitingTextInputFormatter(2)],
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      labelText: 'Day',
+                      hintText: 'dd',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25),
                       ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Enter date';
-                        } else if (int.parse(value) > 31 ||
-                            int.parse(value) < 1) {
-                          return 'wrong';
-                        }
-                        return null;
-                      },
                     ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Enter date';
+                      } else if (int.parse(value) > 31 ||
+                          int.parse(value) < 1) {
+                        return 'wrong';
+                      }
+                      return null;
+                    },
                   ),
-                  const Text('   -   '),
-                  SizedBox(
-                    width: 75,
-                    child: TextFormField(
-                      controller: _month,
-                      textAlign: TextAlign.center,
-                      inputFormatters: [LengthLimitingTextInputFormatter(2)],
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Month',
-                        hintText: 'mm',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                        ),
+                ),
+                const Text('   -   '),
+                SizedBox(
+                  width: 75,
+                  child: TextFormField(
+                    controller: _month,
+                    textAlign: TextAlign.center,
+                    inputFormatters: [LengthLimitingTextInputFormatter(2)],
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      labelText: 'Month',
+                      hintText: 'mm',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25),
                       ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Enter date';
-                        } else if (int.parse(value) > 12 ||
-                            int.parse(value) < 1) {
-                          return 'wrong';
-                        }
-                        return null;
-                      },
                     ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Enter date';
+                      } else if (int.parse(value) > 12 ||
+                          int.parse(value) < 1) {
+                        return 'wrong';
+                      }
+                      return null;
+                    },
                   ),
-                  const Text('   -   '),
-                  SizedBox(
-                    width: 85,
-                    child: TextFormField(
-                      controller: _year,
-                      textAlign: TextAlign.center,
-                      inputFormatters: [LengthLimitingTextInputFormatter(4)],
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Year',
-                        hintText: 'yyyy',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                        ),
+                ),
+                const Text('   -   '),
+                SizedBox(
+                  width: 85,
+                  child: TextFormField(
+                    controller: _year,
+                    textAlign: TextAlign.center,
+                    inputFormatters: [LengthLimitingTextInputFormatter(4)],
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      labelText: 'Year',
+                      hintText: 'yyyy',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25),
                       ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Enter date';
-                        } else if (int.parse(value) > 2023) {
-                          return 'wrong';
-                        }
-                        return null;
-                      },
                     ),
-                  )
-                ],
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Enter date';
+                      } else if (int.parse(value) > 2023) {
+                        return 'wrong';
+                      }
+                      return null;
+                    },
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: 40),
+            FilledButton(
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.all(Size(320, 50)),
+                // minimumSize: const Size.fromHeight(50),
+                shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
               ),
-              const SizedBox(height: 40),
-              FilledButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    ageCalc(_day.text, _month.text, _year.text);
-                    showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                        title: Text(
-                          'Your age is \n $_realAge',
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            color: Colors.purple,
-                          ),
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  ageCalc(_day.text, _month.text, _year.text);
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text(
+                        'Your age is \n $_realAge',
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Colors.purple,
                         ),
-                        content: SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(35.0),
-                                child: Image.asset(
-                                  'assets/images-png/$_zodiac.png',
-                                  fit: BoxFit.contain,
+                      ),
+                      content: SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(35.0),
+                              child: Image.asset(
+                                'assets/images-png/$_zodiac.png',
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  'Your zodiac sign is',
+                                  style: TextStyle(fontSize: 16),
                                 ),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Text(
-                                    'Your zodiac sign is',
-                                    style: TextStyle(fontSize: 16),
+                                Text(
+                                  ' $_zodiac'.toUpperCase(),
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.purple,
+                                    fontSize: 16,
                                   ),
-                                  Text(
-                                    ' $_zodiac'.toUpperCase(),
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.purple,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
-                        actions: [
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Close'),
-                          )
-                        ],
                       ),
-                    );
-                  }
-                },
-                child: const Text('How old am I?'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text('Close'),
+                        )
+                      ],
+                    ),
+                  );
+                }
+              },
+              child: const Text(
+                'How old am I?',
+                style: TextStyle(fontSize: 18),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
