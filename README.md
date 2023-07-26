@@ -1,4 +1,4 @@
-# Age Calculator $ Zodiac Sign Finder
+# Age Calculator & Zodiac Sign Finder
 
 A flutter app to accurately calculate the age of the user and their Zodiac sign.
 
