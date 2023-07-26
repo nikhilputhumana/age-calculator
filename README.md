@@ -4,7 +4,7 @@ A flutter app to accurately calculate the age of the user and their Zodiac sign.
 
 ## How to install?
 
-Go to releases and install the apk or click [here](https://github.com/nikhilputhumana/age-calculator-app/releases/download/v1.0.0/app-release.apk).
+Go to Releases tab and install the apk or click [here](https://github.com/nikhilputhumana/age-calculator-app/releases/download/v1.0.0/app-release.apk).
 
 ## How it works / How to use
 
@@ -12,7 +12,7 @@ Go to releases and install the apk or click [here](https://github.com/nikhilputh
 * The age and zodiac sign is shown when we press the calculate button.
 
 
-## Notes
+## Notes to remember (for personal use)
 
 ### Connecting mobile device with PC
 
