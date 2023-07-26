@@ -34,22 +34,22 @@ dependencies:
 
 dev_dependencies:
   age_calculator: ^1.0.0
+  animated_splash_screen: ^1.3.0
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.0
   flutter_native_splash: ^2.3.1
   flutter_test:
     sdk: flutter
   intl: ^0.18.1
+  page_transition: ^2.0.9
 
-flutter_launcher_icons:
-  android: true
-  ios: true
-  image_path: "assets/icon/appicon2.png"
-
-flutter_native_splash:
-  color: "#42a5f5"
-  image: "assets/images-png/splash.png"
-
+# flutter_launcher_icons:
+#   android: true
+#   ios: true
+#   image_path: "assets/icon/appicon.png"
+# flutter_native_splash:
+#   color: "#42a5f5"
+#   image: "assets/images-png/splash.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.

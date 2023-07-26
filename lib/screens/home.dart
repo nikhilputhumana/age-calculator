@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
 import 'package:age_calculator/age_calculator.dart';
 
 class ScreenHome extends StatefulWidget {
@@ -43,7 +42,7 @@ class _ScreenHomeState extends State<ScreenHome> {
             const SizedBox(
               height: 50,
             ),
-            Text(
+            const Text(
               'Enter Your Date of Birth',
 
               style: TextStyle(
