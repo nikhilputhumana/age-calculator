@@ -1,17 +1,35 @@
-# Age Calculator Horoscope
+# Age Calculator $ Zodiac Sign Finder
 
-A new Flutter project.
+A flutter app to accurately calculate the age of the user and their Zodiac sign.
 
-## Getting Started
+## How to install?
 
-This is an android app which accurately calculates the age of the user and their Zodiac sign
+Go to releases and install the apk or click [here](https://github.com/nikhilputhumana/age-calculator-app/releases/download/v1.0.0/app-release.apk).
 
-_ How it works?
+## How it works / How to use
+
 * User enters the date of birth.
 * The age and zodiac sign is shown when we press the calculate button.
 
 
-## After adding the flutter_launcher_icons into pubspec.yaml
+## Notes
+
+### Connecting mobile device with PC
+
+* Connect to same wifi.
+* Turn on wireless debugging in mobile device.
+* Allow wireless debugging (when dialogue box appears).
+* Get the ip address and port number from wireless debugging settings.
+* Execute the following command
+
+```bash
+adb connect <ip address with port>
+```
+
+Then device name will be visible in available devices (in VS Code).
+
+
+### After adding the flutter_launcher_icons into pubspec.yaml
 
 Run following commands
 
